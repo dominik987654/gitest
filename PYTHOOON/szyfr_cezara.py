@@ -4,6 +4,7 @@
 
 def szyfruj_cezar(tekst, klucz):
     klucz = int(klucz) % 26
+    szyfrogram = ""
     for znak in tekst:
         znak = znak.lower()
         if ord(znak) + klucz > 122:
@@ -12,12 +13,17 @@ def szyfruj_cezar(tekst, klucz):
             szyfrogram += chr(ord(znak) + klucz)
     return szyfrogram
 
+    def deszyfruj_cezar(szyfrogram,klucz):
+        tekst=""
+        pass
+        return tekst
 
 def main(args):
     tekst = raw_input("Podaj tekst : ")
     klucz = raw_input("Podaj klucz : ")
-    print szyfruj_cezar(tekst, klucz
-
+    szyfrogram = szyfruj_cezar(tekst, klucz)
+    print szyfrogram
+    print deszyfruj_cezar(szyfrogram,klucz)
     return 0
 
 
