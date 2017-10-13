@@ -10,7 +10,7 @@ from dane import *     #importuj wszystko
 
 
 def main(args):
-    con = sqlite3.connect('pracownicy.sklite3')
+    con = sqlite3.connect('pracownicy.sqlite3')
     cur = con.cursor() #utworzenie kursora
     
     #utworzenie tabel w bazie danych    

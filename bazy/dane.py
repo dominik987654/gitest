@@ -16,7 +16,7 @@ def dane_z_pliku(plik,delimiter='\t'):
     
     return dane
 
-def wyczysc_dane(dane, pole):
+def wyczysc_dane(dane,pole):
     for i, rekord in enumerate(dane):
         el = rekord[pole]
         el = el.replace('zł','')
