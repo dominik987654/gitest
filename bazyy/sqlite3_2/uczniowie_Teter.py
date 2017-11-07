@@ -5,6 +5,12 @@
 
 import sqlite3
 
+def wyniki(cur):
+    wyniki = cur.fetchall() #pobierz wszystkie wiersze od razu
+    for row in wyniki:
+        print(tuple(row))
+
+
 
 def kw_a(cur):
     cur.execute('''
@@ -13,21 +19,15 @@ def kw_a(cur):
         WHERE tbUczniowie.klasaID=tbKlasy.IDklasy
         AND tbKlasy.Klasa = '1A'
         ''')
-    wyniki = cur.fetchall() #pobierz wszystkie wiersze od razu
-    for row in wyniki:
-        print(tuple(row))
-
-
+        
+        
 def kw_b(cur):
     cur.execute('''
         SELECT MAX(EgzHum)
         FROM tbUczniowie
         ''')
-    wyniki = cur.fetchall() #pobierz wszystkie wiersze od razu
-    for row in wyniki:
-        print(tuple(row))
-
-
+        
+        
 def kw_c(cur):
     cur.execute("""
         SELECT AVG(EgzMat)
@@ -35,11 +35,8 @@ def kw_c(cur):
         WHERE tbUczniowie.klasaID=tbKlasy.IDklasy
         AND tbKlasy.Klasa = '1A'
         """)
-    wyniki = cur.fetchall() #pobierz wszystkie wiersze od razu
-    for row in wyniki:
-        print(tuple(row))
-
-
+        
+        
 def kw_d(cur):
     cur.execute("""
         SELECT Imie, Nazwisko, tbOceny.Ocena
@@ -49,11 +46,7 @@ def kw_d(cur):
         AND Nazwisko = "Nowak"
         """)
         
-    wyniki = cur.fetchall() #pobierz wszystkie wiersze od razu
-    for row in wyniki:
-        print(tuple(row))
         
- 
 def kw_e(cur):
     cur.execute("""
         SELECT AVG(Ocena)
@@ -62,17 +55,46 @@ def kw_e(cur):
         AND tbOceny.PrzedmiotID = tbPrzedmioty.IDPrzedmiotu
         AND tbPrzedmioty.Przedmiot = 'fizyka'
        """)
-    wyniki = cur.fetchall() #pobierz wszystkie wiersze od razu
-    for row in wyniki:
-        print(tuple(row))
- 
-
+       
+def dodaj(cur): #dodawanie 
+    cur.execute("""
+        INSERT INTO tbKlasy
+        VALUES (?,?,?,?)
+    """,[None,'3C',2015,2018])
+    
+def aktualizuj(cur):
+    cur.execute("""
+        UPDATE tbKlasy
+        SET klasa = ?
+        WHERE IDKlasy = ?
+    """,['3D',13])
+    
+def akt(cur):
+    cur.execute("""
+    UPDATE tbUczniowie
+    SET EgzJez = ?
+    WHERE Imie = ?
+    AND Nazwisko = ?
+    AND IDucznia = ?
+    """, [35, 'Paulina', 'Dziedzic', 135])
+    
+    
+def usun(cur):
+    cur.execute('DELETE FROM tbKlasy WHERE klasa = ? AND roknaboru = ?', ['3B', 2015])
+    
+    
 def main(args):
     con = sqlite3.connect('szkola.db')
     cur = con.cursor() #utworzenie kursora
     con.row_factory = sqlite3.Row
     
-    kw_a(cur)
+    #dodaj(cur)
+    #aktualizuj(cur)
+    #usun(cur)
+    akt(cur)
+    con.commit()
+    wyniki(cur.execute('SELECT * FROM tbUczniowie'))
+    #wyniki(cur.execute('SELECT * FROM tbKlasy'))
     
     return 0
 
