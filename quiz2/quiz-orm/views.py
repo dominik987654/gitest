@@ -19,3 +19,27 @@ def lista():
         return redirect(url_for('index'))
 
     return render_template('lista.html', pytania=pytania)
+
+
+@app.route('/quiz')
+def quiz():
+    """Wyświetlenie pytań i odpowiedzi w formie quizu oraz ocena poprawności
+    przesłanych odpowiedzi"""
+    if request.method == 'POST':
+        wynik = 0
+        for pid, odp in request.form.items():
+            odpok = Pytanie.select(Pytanie.odpok).where(
+                Pytanie.id == int(pid)).scalar()
+            if odp == odpok:
+                wynik += 1
+
+        flash('Liczba poprawnych odpowiedzi, to: {0}'.format(wynik), 'sukces')
+        return redirect(url_for('index'))
+
+    # GET, wyświetl pytania
+    pytania = Pytanie().select().annotate(Odpowiedz)
+    if not pytania.count():
+        flash('Brak pytań w bazie.', 'kom')
+        return redirect(url_for('index'))
+
+    return render_template('quiz.html', pytania=pytania)
