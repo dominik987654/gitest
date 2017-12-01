@@ -23,3 +23,7 @@ class DodajForm(FlaskForm):
         choices=[('0', 'o0'), ('1', 'o1'), ('2', 'o2')]
     )
     pid = HiddenField("Pytanie id")
+
+class TodoForm(FlaskForm):
+    zadanie = StringField('treść zadania',
+                            validators = [Required(message = 'Wpisz zadanie')])
