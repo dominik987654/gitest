@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item><pubDate>Tue, 12 Dec 2017 12:15:48 +0100</pubDate><title><![CDATA[Witaj na mojej stronie!]]></title><url><![CDATA[index]]></url><meta><![CDATA[getsimple, easy, content management system]]></meta><metad><![CDATA[]]></metad><menu><![CDATA[Strona główna]]></menu><menuOrder><![CDATA[0]]></menuOrder><menuStatus><![CDATA[Y]]></menuStatus><template><![CDATA[template.php]]></template><parent><![CDATA[]]></parent><content><![CDATA[&lt;p&gt;Thank you for using GetSimple CMS. This is your homepage, so please change this text to be what you want.&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;http://get-simple.info/docs/&quot;&gt;GetSimple CMS Documentation&lt;/a&gt;
+
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href=&quot;http://get-simple.info/docs/theme-creation&quot;&gt;How to Create a GetSimple Theme&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://get-simple.info/forums/&quot;&gt;GetSimple Support Forums&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;&lt;u&gt;&lt;em&gt;&lt;a href=&quot;http://lo1.sandomierz.pl&quot;&gt;I LO Collegium Gostomianum&lt;/a&gt;&lt;/em&gt;&lt;/u&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Nagłówek 1&lt;/h2&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;&lt;em&gt;Without installation&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;&lt;em&gt;UwAmp is available as a Zip archive, just unpack it and you can run the wamp server.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;Nagłówek 2&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;#header h1 a { 
+	display: block; 
+	width: 300px; 
+	height: 80px; 
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;Nagłówek 3&lt;/h4&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+	&lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
+	&lt;li&gt;Donec ut est risus, placerat venenatis augue&lt;/li&gt;
+&lt;/ol&gt;
+]]></content><private><![CDATA[]]></private><author><![CDATA[uczen]]></author></item>
