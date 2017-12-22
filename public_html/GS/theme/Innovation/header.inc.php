@@ -48,8 +48,8 @@
 				<!-- main navigation -->
 				<nav id="main-nav">
 					<ul>
-						<?php get_navigation(get_page_slug(FALSE)); ?>
-					</ul>
+						<?php get_i18n_navigation(get_page_slug()minilevel, maxlevel); ?>
+                    </ul>
 				</nav>
 			</div>
 		</div>

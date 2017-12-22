@@ -45,17 +45,17 @@ define('GSDONOTPING', 1);
 # Enable Canonical Redirects?
 #define('GSCANONICAL', 1);
 
-Use Uploadify to upload files?
-define('GSNOUPLOADIFY', 1);
+# Use Uploadify to upload files?
+#define('GSNOUPLOADIFY', 1);
 
 # WYSIWYG editor height (default 500)
 #define('GSEDITORHEIGHT', '400');
 
 # WYSIWYG toolbars (advanced, basic or [custom config]) 
-define('GSEDITORTOOL', 'advanced');
+#define('GSEDITORTOOL', 'advanced');
 
-WYSIWYG editor language (default pl)
-define('GSEDITORLANG', 'pl');
+# WYSIWYG editor language (default en)
+#define('GSEDITORLANG', 'en');
 
 # WYSIWYG Editor Options
 #define('GSEDITOROPTIONS', '');
@@ -71,11 +71,11 @@ define('GSEDITORLANG', 'pl');
 	
 # Set PHP locale
 # http://php.net/manual/en/function.setlocale.php
-setlocale(LC_ALL, 'pl_PL');
+#setlocale(LC_ALL, 'en_US');
 
 # Define default timezone of server, accepts php timezone string
 # valid timeszones can be found here http://www.php.net/manual/en/timezones.php
-define('GSTIMEZONE', 'Europe/Warsaw');
+# define('GSTIMEZONE', 'America/Chicago');
 
 # Disable loading of external CDN versions of scripts (jQuery/jQueryUI)
 #define("GSNOCDN",true);
