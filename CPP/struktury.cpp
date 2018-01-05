@@ -5,6 +5,8 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
+
 
 
 using namespace std;
@@ -35,15 +37,44 @@ void getSamochody(samochod t[], int ile){
 }
 }
     
+void zapiszDane(samochod t[], int ile){
+    ofstream plik("samochody.txt", ios::app);
+    if (!plik.is_open()) {
+        cout << "Błąd otwarcia pliku!";
+    } else  {
+        for(int i=0; i<ile; i++){
+            cout << t[i].marka << " ," << t[i].model << " ," << t[i].rokprodukcji << endl;
+            plik << t[i].marka << " ," << t[i].model << " ," << t[i].rokprodukcji << endl;
+        }
+    }
+}
+
+
 void drukujSamochody(samochod t[], int ile){
     for(int i=0; i<=ile; i++){
         cout << "Marka samochodu : ";
-        cout << t[i].marka;
+        cout << t[i].marka << " ";
         cout << "Model samochodu : ";
-        cout << t[i].model;
+        cout << t[i].model << " ";
         cout << "Rok produkcji samochodu : ";
-        cout << t[i].rokprodukcji;
+        cout << t[i].rokprodukcji << " ";
+        cout << endl;
 }
+}
+
+int czytajDane(samochod t[] ){
+    ifstream plik("samochody.txt"):
+    string linia;
+    int i=0;
+    if (plik.is_open()) {
+        while(getline(plik, linia)){
+            cout << linia << endl;
+            i++;
+        }
+    } else { 
+        cout << "Błąd otwarcia pliku!";
+    }
+    return i;
 }
 int main(int argc, char **argv)
 {
@@ -59,10 +90,10 @@ int main(int argc, char **argv)
     int ile;
     cout << "Ile samochodow?", cin >> ile;
     samochod tb[ile];
-    getSamochody(tb, ile);
-    drukujSamochody(tb, ile);
-    
-    
+    //getSamochody(tb, ile);
+    //drukujSamochody(tb, ile);
+    //zapiszDane(tb, ile);
+    cout << czytajDane(tb) << endl;
 	return 0;
 }
 
