@@ -4,6 +4,8 @@
 #  
 #  
 
+import csv
+def czytajDane( ):
 
 def main(args):
     return 0
