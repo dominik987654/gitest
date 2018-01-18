@@ -1,54 +1,10 @@
 /*
  */
 
-
 #include <iostream>
-
+#include
 
 using namespace std;
-
-class Ulamek{
-private:
-    int licznik;   //deklaracja skladowej wlasciwosci
-    int mianownik;
-public:
-    Ulamek(int, int); //deklaracja konstruktora
-     
-    void zapisz(int, int);  //deklaracja metody nie trzeba podawac zmiennych
-    void wypisz(){
-        cout << licznik << "/" << mianownik;
-    }
-    int get_l(){
-        return licznik;
-    }
-    int get_m(){
-        return mianownik;
-    }
-void skracaj();  //drukuje skrocona postac ulamka
-
-
-};
-
-void Ulamek::skracaj(){
-    ; //algorytm euklidesa
-
-void Ulamek::zapisz(int l, int m){
-    licznik = l;
-    if(m!=0) mianownik = m;
-    else {
-        cout << "Nie dziel przez zero!";
-        exit(1);        
-    }
-}
-
-Ulamek::Ulamek(int l, int m){
-    licznik = l;
-    if(m!=0) mianownik = m;
-    else {
-        cout << "Nie dziel przez zero!";
-        exit(1);        
-    }
-}
 
 
 int main(int argc, char **argv)
