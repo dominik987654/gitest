@@ -11,17 +11,35 @@ def pobierzDane(ile):
         nazwisko = input('Podaj nazwisko :')
         wiek = input('Podaj wiek :')
         lista.append(osoba(imie, nazwisko, wiek))
+    return lista
 
+def wyswietlDane(lista):
+    for slow in lista:
+         print('Imie :', slow['imie'])
+         print('Nazwisko :', slow['nazwisko'])
+         print('Wiek :', slow['wiek'])
+
+def zapiszDane(lista):
+    with open('osoby.txt', 'w') as plik:
+        for slow in lista:
+            plik.write(', '.join(slow.values()) + "\n")
 
 
 def main(args):
+
     #osoba1 = osoba('Zbyszek', 'Ciasny', '43'):
     #print (osoba1.keys())
     #print (osoba1.values())
     #print (osoba1['nazwisko'])
+
     ile = input('Ile osob wprowadzisz?')
     lista = pobierzDane(ile)
+
     print(lista)
+    wyswietlDane(lista)
+    zapiszDane(lista)
+
+
     return 0
 
 
